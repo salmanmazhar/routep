@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141211210710) do
+ActiveRecord::Schema.define(version: 20141211223238) do
 
   create_table "changes", force: true do |t|
     t.string   "city_id"
@@ -23,7 +23,11 @@ ActiveRecord::Schema.define(version: 20141211210710) do
   add_index "changes", ["tip_id"], name: "index_changes_on_tip_id"
 
   create_table "cities", force: true do |t|
-    t.string   "city_name"
+    t.string   "name"
+    t.string   "country"
+    t.string   "lang"
+    t.string   "long"
+    t.string   "place_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
