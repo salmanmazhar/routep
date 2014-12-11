@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  body: MyString
+  flaggeable_type: MyString
+  tip_id: 
+  user_id: 
+
+two:
+  body: MyString
+  flaggeable_type: MyString
+  tip_id: 
+  user_id: 
