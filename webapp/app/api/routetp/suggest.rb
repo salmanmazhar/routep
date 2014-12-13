@@ -7,15 +7,15 @@ module Routetp
     
             
         params do
-            requires :term, type: String, regexp: /^[a-z]+$/
+            requires :term, type: String, regexp: /^[a-zA-Z]+$/
         end
         
         
         resource :suggest do
             desc "Return the suggestions"
             post do
-                term = params[:term]
-                
+                #We are limiting the search suggestion to 5 only for performance
+                suggestions = Geoname.listSuggestions(params[:term])
             end
             get do
                 #We don't want
