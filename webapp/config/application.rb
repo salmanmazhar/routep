@@ -21,5 +21,8 @@ module Webapp
     # config.i18n.default_locale = :de
     config.paths.add File.join('app', 'api'), glob: File.join('**', '*.rb')
     config.autoload_paths += Dir[Rails.root.join('app', 'api', '*')]
+    
+    
+    config.autoload_paths << Rails.root.join('lib')
   end
 end

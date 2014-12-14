@@ -4,18 +4,19 @@ module Routetp
         #catch all the errors
         rescue_from :all
         default_error_status 400
+        
     
             
         params do
-            requires :term, type: String, regexp: /^[a-zA-Z]+$/
+            requires :term, type: String
         end
         
         
         resource :suggest do
             desc "Return the suggestions"
             post do
-                #We are limiting the search suggestion to 5 only for performance
                 suggestions = Geoname.listSuggestions(params[:term])
+                #puts suggestions.inspect
             end
             get do
                 #We don't want
